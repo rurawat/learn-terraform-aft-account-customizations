@@ -1,7 +1,7 @@
 
 locals {
   vpc-cidr = "192.168.0.0/24"
-  region   = "eu-west02"
+  region   = "eu-west-2"
   subnet_cidr1_az1 = element(cidrsubnets("192.168.0.0/24", 3, 3, 3, 4,4,4,4,4,4),0)
   subnet_cidr1_az2 = element(cidrsubnets("192.168.0.0/24", 3, 3, 3, 4,4,4,4,4,4),1)
   subnet_cidr1_az3 = element(cidrsubnets("192.168.0.0/24", 3, 3, 3, 4,4,4,4,4,4),2)
