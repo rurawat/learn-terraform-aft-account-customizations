@@ -17,5 +17,5 @@ locals {
 
   #vpc-region = (local.region t== "eu-west-2" ? data.terraform_remote_state.networking_state.outputs.vpc-london : data.terraform_remote_state.networking_state.outputs.vpc-ohio)
 
-  account_id = data.aws_caller_identity.current.account_id
+  account_id = "468972105923"
 }
