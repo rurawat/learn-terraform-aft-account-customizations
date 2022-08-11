@@ -1,8 +1,5 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-  providers = {
-    aws = aws.region-selection
-  }
   version = "3.11.3"
 
 
