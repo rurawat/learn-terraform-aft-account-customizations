@@ -10,18 +10,20 @@ module "vpc" {
   public_subnets   = ["${local.subnet_cidr3_az1}", "${local.subnet_cidr3_az2}", "${local.subnet_cidr3_az3}"]
   private_subnets  = ["${local.subnet_cidr1_az1}", "${local.subnet_cidr1_az2}", "${local.subnet_cidr1_az3}"]
   database_subnets = ["${local.subnet_cidr2_az1}", "${local.subnet_cidr2_az2}", "${local.subnet_cidr2_az3}"]
-  transit_subnets  = ["${local.subnet_cidr4_az1}", "${local.subnet_cidr4_az2}", "${local.subnet_cidr4_az3}"]
+  elasticache_subnets = ["${local.subnet_cidr4_az1}", "${local.subnet_cidr4_az2}", "${local.subnet_cidr4_az3}"]
 
+  
+ 
   enable_vpn_gateway                 = false
   propagate_private_route_tables_vgw = false
   enable_nat_gateway                 = false
   enable_dns_hostnames               = false
-
+  
   public_subnet_tags = {
     Name = "net-${local.region}-${local.environment}-public-${local.CustomerName}"
   }
 
-  transit_subnet_tags = {
+  elasticache_subnet_tags = {
     Name = "net-${local.region}-${local.environment}-transit-${local.CustomerName}"
   }
 
